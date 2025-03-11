@@ -15,7 +15,7 @@ try {
 if (isset($_GET['delete'])) {
     $id = $_GET['delete'];
     try {
-        // Check if item is used in any bills (you might need to adjust this if you have a bill_items table)
+        // Check if item is used in any bills 
         $stmt = $pdo->prepare("DELETE FROM items WHERE it_id = ?");
         $stmt->execute([$id]);
         header("Location: Items.php");
